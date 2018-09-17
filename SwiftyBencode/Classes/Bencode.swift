@@ -61,19 +61,19 @@ extension BencodeProtocol {
 
 public struct TorrentFile {
     
-    let path: [String]
-    let length: Int
-    let range: CountableRange<Int>
+    public let path: [String]
+    public let length: Int
+    public let range: CountableRange<Int>
     
-    var start: Int {
+    public var start: Int {
         return range.lowerBound
     }
     
-    var end: Int {
+    public var end: Int {
         return range.upperBound
     }
     
-    init(path: [String], length: Int, start: Int) {
+    public init(path: [String], length: Int, start: Int) {
         self.path = path
         self.length = length
         self.range = start..<(start + length)
